@@ -10,11 +10,11 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #304536; /* Ciemnozielony */
-            color: #fff;
+            background-color: #304536; /* Ciemnozielone tło */
+            color: #fff; /* Biały tekst */
         }
         header {
-            background: #5D6C61; /* Średniozielony */
+            background: #5D6C61; /* Średniozielony nagłówek */
             color: #fff;
             padding: 20px 0;
             text-align: center;
@@ -24,35 +24,30 @@
             font-size: 2.5em;
         }
         .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
             display: flex;
             flex-wrap: wrap;
-            padding: 20px;
+            gap: 20px;
+            padding: 20px 0;
         }
-        .left-column {
+        .column {
             flex: 1;
-            max-width: 30%;
-            padding-right: 20px;
-        }
-        .right-column {
-            flex: 2;
-            max-width: 70%;
-        }
-        section {
-            margin-bottom: 20px;
+            min-width: 300px;
+            background: #5D6C61; /* Średniozielone tło dla kolumn */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         section h2 {
             color: #fff;
-            border-bottom: 2px solid #852029; /* Czerwony */
+            border-bottom: 2px solid #852029; /* Czerwony akcent */
             padding-bottom: 10px;
-        }
-         .contact-info, .education, .skills, .languages, .experience {
-            background: #fff;
-            padding: 20px;
             margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-       .contact-info p, .education p, .skills ul, .languages ul, .experience ul {
+        .contact-info p, .education p, .skills ul, .languages ul, .experience ul {
             margin: 0;
             padding: 0;
         }
@@ -64,7 +59,7 @@
             padding-left: 0;
         }
         .skills ul li, .languages ul li, .experience ul li {
-            background: #f4f4f4;
+            background: #304536; /* Ciemnozielone tło dla list */
             margin: 5px 0;
             padding: 10px;
             border-radius: 5px;
@@ -81,19 +76,18 @@
             padding: 5px 0;
         }
         footer {
-            background: #5D6C61; /* Średniozielony */
+            background: #5D6C61; /* Średniozielony stopka */
             color: #fff;
             text-align: center;
             padding: 10px 0;
             margin-top: 20px;
         }
         @media (max-width: 768px) {
-            .left-column, .right-column {
-                max-width: 100%;
-                padding-right: 0;
-            }
             .container {
                 flex-direction: column;
+            }
+            .column {
+                width: 100%;
             }
         }
     </style>
@@ -105,7 +99,7 @@
     </header>
 
     <div class="container">
-        <div class="left-column">
+        <div class="column">
             <section id="contact" class="contact-info">
                 <h2>Contact Info</h2>
                 <p><strong>Phone:</strong> 510111111</p>
@@ -142,7 +136,7 @@
             </section>
         </div>
 
-        <div class="right-column">
+        <div class="column">
             <section id="experience" class="experience">
                 <h2>Experience</h2>
                 <ul>
