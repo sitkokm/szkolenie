@@ -10,11 +10,11 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #304536; /* Ciemnozielone tło */
+            color: #fff; /* Biały tekst */
         }
         header {
-            background: #333;
+            background: #5D6C61; /* Średniozielony nagłówek */
             color: #fff;
             padding: 20px 0;
             text-align: center;
@@ -24,24 +24,28 @@
             font-size: 2.5em;
         }
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 1200px;
             margin: auto;
             overflow: hidden;
-        }
-        section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
             padding: 20px 0;
         }
-        section h2 {
-            color: #333;
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-        }
-        .contact-info, .education, .skills, .languages, .experience {
-            background: #fff;
+        .column {
+            flex: 1;
+            min-width: 300px;
+            background: #5D6C61; /* Średniozielone tło dla kolumn */
             padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
+            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #fff;
+            border-bottom: 2px solid #852029; /* Czerwony akcent */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
         .contact-info p, .education p, .skills ul, .languages ul, .experience ul {
             margin: 0;
@@ -55,17 +59,36 @@
             padding-left: 0;
         }
         .skills ul li, .languages ul li, .experience ul li {
-            background: #f4f4f4;
+            background: #304536; /* Ciemnozielone tło dla list */
             margin: 5px 0;
             padding: 10px;
             border-radius: 5px;
         }
+        .experience ul li {
+            font-size: 0.9em; /* Zmniejszona czcionka dla doświadczenia */
+        }
+        .experience ul li ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        .experience ul li ul li {
+            background: none;
+            padding: 5px 0;
+        }
         footer {
-            background: #333;
+            background: #5D6C61; /* Średniozielony stopka */
             color: #fff;
             text-align: center;
             padding: 10px 0;
             margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .column {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -76,109 +99,113 @@
     </header>
 
     <div class="container">
-        <section id="contact" class="contact-info">
-            <h2>Contact Info</h2>
-            <p><strong>Phone:</strong> 510111111</p>
-            <p><strong>Email:</strong> xxyzxx.xx.xx@gmail.com</p>
-            <p><strong>Location:</strong> Wrocław, Poland</p>
-        </section>
+        <div class="column">
+            <section id="contact" class="contact-info">
+                <h2>Contact Info</h2>
+                <p><strong>Phone:</strong> 510111111</p>
+                <p><strong>Email:</strong> xxyzxx.xx.xx@gmail.com</p>
+                <p><strong>Location:</strong> Wrocław, Poland</p>
+            </section>
 
-        <section id="education" class="education">
-            <h2>Education</h2>
-            <p><strong>2021 - 2024</strong><br>Wrocław University of Economics<br>Business Informatics</p>
-            <p><strong>2017 - 2021</strong><br>Andrzej Frycz Modrzewski High School No. II in Rybnik<br>Bilingual class (English language)</p>
-        </section>
+            <section id="education" class="education">
+                <h2>Education</h2>
+                <p><strong>2021 - 2024</strong><br>Wrocław University of Economics<br>Business Informatics</p>
+                <p><strong>2017 - 2021</strong><br>Andrzej Frycz Modrzewski High School No. II in Rybnik<br>Bilingual class (English language)</p>
+            </section>
 
-        <section id="skills" class="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li>Excel</li>
-                <li>Python</li>
-                <li>Machine Learning</li>
-                <li>SQL</li>
-                <li>SAP</li>
-                <li>UML, BPMN</li>
-                <li>Basic proficiency: Java, C#, HTML, CSS</li>
-            </ul>
-        </section>
+            <section id="skills" class="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>Excel</li>
+                    <li>Python</li>
+                    <li>Machine Learning</li>
+                    <li>SQL</li>
+                    <li>SAP</li>
+                    <li>UML, BPMN</li>
+                    <li>Basic proficiency: Java, C#, HTML, CSS</li>
+                </ul>
+            </section>
 
-        <section id="languages" class="languages">
-            <h2>Languages</h2>
-            <ul>
-                <li>Polish C2</li>
-                <li>English C1</li>
-                <li>Russian A1</li>
-            </ul>
-        </section>
+            <section id="languages" class="languages">
+                <h2>Languages</h2>
+                <ul>
+                    <li>Polish C2</li>
+                    <li>English C1</li>
+                    <li>Russian A1</li>
+                </ul>
+            </section>
+        </div>
 
-        <section id="experience" class="experience">
-            <h2>Experience</h2>
-            <ul>
-                <li>
-                    <strong>June 2024 - August 2024</strong><br>
-                    <strong>BNY</strong><br>
-                    <strong>Software Engineer Summer Intern</strong><br>
-                    Responsibilities:
-                    <ul>
-                        <li>Developed a Python-based machine learning project focused on data processing and pattern recognition.</li>
-                        <li>Analyzed and worked with various datasets to train and optimize machine learning models.</li>
-                        <li>Collaborated with the team to integrate the project into existing systems.</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>July 2023 - September 2023</strong><br>
-                    <strong>Kaufland Polska</strong><br>
-                    <strong>Intern in the Purchase Department</strong><br>
-                    Responsibilities:
-                    <ul>
-                        <li>Negotiated with suppliers</li>
-                        <li>Analyzed sales data</li>
-                        <li>Created and monitored orders</li>
-                        <li>Managed assortment data using tools such as SAP, Excel</li>
-                        <li>Planned promotional activities, calculated, and determined product prices</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>June 2023 - now</strong><br>
-                    <strong>Capital Market Student Association Hossa ProCapital</strong><br>
-                    <strong>Member of the Board for Marketing</strong><br>
-                    Responsibilities:
-                    <ul>
-                        <li>Created marketing strategies</li>
-                        <li>Managed people, organized work</li>
-                        <li>Mentored new members, conducted training</li>
-                        <li>Managed organizational data</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>October 2022 - now</strong><br>
-                    <strong>Capital Market Student Association Hossa ProCapital</strong><br>
-                    <strong>Member of the Marketing Department</strong><br>
-                    Responsibilities:
-                    <ul>
-                        <li>Managed social media channels, including writing posts, creating graphics, organizing events, live streams, and managing paid promotions</li>
-                        <li>Designed graphics for posters, stickers, mugs, and t-shirts</li>
-                        <li>Designed web page</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>October 2021 - June 2022</strong><br>
-                    <strong>Zrzeszenie Studentów Polskich - Student Organization</strong><br>
-                    <strong>Member of the Administration Department</strong><br>
-                    Responsibilities:
-                    <ul>
-                        <li>Recorded and planned project tasks using Excel, Miro, Trello</li>
-                        <li>Booked university rooms</li>
-                        <li>Collected data of members and meeting participants</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>October 2021 - now</strong><br>
-                    <strong>Tutor</strong><br>
-                    Teaching mathematics and physics at the high school level
-                </li>
-            </ul>
-        </section>
+        <div class="column">
+            <section id="experience" class="experience">
+                <h2>Experience</h2>
+                <ul>
+                    <li>
+                        <strong>June 2024 - August 2024</strong><br>
+                        <strong>BNY</strong><br>
+                        <strong>Software Engineer Summer Intern</strong><br>
+                        Responsibilities:
+                        <ul>
+                            <li>Developed a Python-based machine learning project focused on data processing and pattern recognition.</li>
+                            <li>Analyzed and worked with various datasets to train and optimize machine learning models.</li>
+                            <li>Collaborated with the team to integrate the project into existing systems.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>July 2023 - September 2023</strong><br>
+                        <strong>Kaufland Polska</strong><br>
+                        <strong>Intern in the Purchase Department</strong><br>
+                        Responsibilities:
+                        <ul>
+                            <li>Negotiated with suppliers</li>
+                            <li>Analyzed sales data</li>
+                            <li>Created and monitored orders</li>
+                            <li>Managed assortment data using tools such as SAP, Excel</li>
+                            <li>Planned promotional activities, calculated, and determined product prices</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>June 2023 - now</strong><br>
+                        <strong>Capital Market Student Association Hossa ProCapital</strong><br>
+                        <strong>Member of the Board for Marketing</strong><br>
+                        Responsibilities:
+                        <ul>
+                            <li>Created marketing strategies</li>
+                            <li>Managed people, organized work</li>
+                            <li>Mentored new members, conducted training</li>
+                            <li>Managed organizational data</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>October 2022 - now</strong><br>
+                        <strong>Capital Market Student Association Hossa ProCapital</strong><br>
+                        <strong>Member of the Marketing Department</strong><br>
+                        Responsibilities:
+                        <ul>
+                            <li>Managed social media channels, including writing posts, creating graphics, organizing events, live streams, and managing paid promotions</li>
+                            <li>Designed graphics for posters, stickers, mugs, and t-shirts</li>
+                            <li>Designed web page</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>October 2021 - June 2022</strong><br>
+                        <strong>Zrzeszenie Studentów Polskich - Student Organization</strong><br>
+                        <strong>Member of the Administration Department</strong><br>
+                        Responsibilities:
+                        <ul>
+                            <li>Recorded and planned project tasks using Excel, Miro, Trello</li>
+                            <li>Booked university rooms</li>
+                            <li>Collected data of members and meeting participants</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>October 2021 - now</strong><br>
+                        <strong>Tutor</strong><br>
+                        Teaching mathematics and physics at the high school level
+                    </li>
+                </ul>
+            </section>
+        </div>
     </div>
 
     <footer>
