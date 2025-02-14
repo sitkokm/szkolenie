@@ -18,10 +18,20 @@
             color: #fff;
             padding: 20px 0;
             text-align: center;
+            position: relative;
         }
         header h1 {
             margin: 0;
             font-size: 2.5em;
+        }
+        .profile-picture {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #fff;
         }
         .container {
             width: 90%;
@@ -89,11 +99,17 @@
             .column {
                 width: 100%;
             }
+            .profile-picture {
+                position: static;
+                margin: 0 auto 20px;
+                display: block;
+            }
         }
     </style>
 </head>
 <body>
     <header>
+        <img src="pht.png" alt="Katarzyna Sitko" class="profile-picture">
         <h1>Katarzyna Sitko</h1>
         <p>Business Informatics Graduate | Software Engineer</p>
     </header>
@@ -105,6 +121,7 @@
                 <p><strong>Phone:</strong> 510111111</p>
                 <p><strong>Email:</strong> xxyzxx.xx.xx@gmail.com</p>
                 <p><strong>Location:</strong> Wrocław, Poland</p>
+                <p><strong>My Social Media:</strong> <a href="https://www.facebook.com/knrkhossaprocapital" target="_blank" style="color: #fff; text-decoration: underline;">Facebook</a></p>
             </section>
 
             <section id="education" class="education">
