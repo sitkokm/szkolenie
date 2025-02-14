@@ -10,11 +10,11 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #304536; /* Ciemnozielone tło */
-            color: #fff; /* Biały tekst */
+            background-color: #304536; /* Ciemnozielony */
+            color: #fff;
         }
         header {
-            background: #5D6C61; /* Średniozielony nagłówek */
+            background: #5D6C61; /* Średniozielony */
             color: #fff;
             padding: 20px 0;
             text-align: center;
@@ -24,70 +24,90 @@
             font-size: 2.5em;
         }
         .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            overflow: hidden;
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
-            padding: 20px 0;
-        }
-        .column {
-            flex: 1;
-            min-width: 300px;
-            background: #5D6C61; /* Średniozielone tło dla kolumn */
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .left-column {
+            flex: 1;
+            max-width: 30%;
+            padding-right: 20px;
+        }
+        .right-column {
+            flex: 2;
+            max-width: 70%;
+        }
+        section {
+            margin-bottom: 20px;
         }
         section h2 {
             color: #fff;
-            border-bottom: 2px solid #852029; /* Czerwony akcent */
+            border-bottom: 2px solid #852029; /* Czerwony */
             padding-bottom: 10px;
-            margin-bottom: 20px;
         }
-        .contact-info p, .education p, .skills ul, .languages ul, .experience ul {
+        .contact-info, .education, .skills, .languages {
+            background: #5D6C61; /* Średniozielony */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .experience {
+            background: #5D6C61; /* Średniozielony */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info p, .education p, .skills ul, .languages ul {
             margin: 0;
             padding: 0;
         }
         .contact-info p, .education p {
             margin-bottom: 10px;
         }
-        .skills ul, .languages ul, .experience ul {
+        .skills ul, .languages ul {
             list-style-type: none;
             padding-left: 0;
         }
-        .skills ul li, .languages ul li, .experience ul li {
-            background: #304536; /* Ciemnozielone tło dla list */
+        .skills ul li, .languages ul li {
+            background: #304536; /* Ciemnozielony */
             margin: 5px 0;
             padding: 10px;
             border-radius: 5px;
         }
+        .experience ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
         .experience ul li {
-            font-size: 0.9em; /* Zmniejszona czcionka dla doświadczenia */
+            margin-bottom: 20px;
+        }
+        .experience ul li strong {
+            display: block;
+            font-size: 1.1em;
+            color: #852029; /* Czerwony */
         }
         .experience ul li ul {
             margin-top: 10px;
             padding-left: 20px;
+            font-size: 0.9em;
         }
         .experience ul li ul li {
-            background: none;
-            padding: 5px 0;
+            margin-bottom: 5px;
         }
         footer {
-            background: #5D6C61; /* Średniozielony stopka */
+            background: #5D6C61; /* Średniozielony */
             color: #fff;
             text-align: center;
             padding: 10px 0;
             margin-top: 20px;
         }
         @media (max-width: 768px) {
+            .left-column, .right-column {
+                max-width: 100%;
+                padding-right: 0;
+            }
             .container {
                 flex-direction: column;
-            }
-            .column {
-                width: 100%;
             }
         }
     </style>
@@ -99,7 +119,7 @@
     </header>
 
     <div class="container">
-        <div class="column">
+        <div class="left-column">
             <section id="contact" class="contact-info">
                 <h2>Contact Info</h2>
                 <p><strong>Phone:</strong> 510111111</p>
@@ -136,7 +156,7 @@
             </section>
         </div>
 
-        <div class="column">
+        <div class="right-column">
             <section id="experience" class="experience">
                 <h2>Experience</h2>
                 <ul>
